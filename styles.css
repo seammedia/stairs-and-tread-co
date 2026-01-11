@@ -319,9 +319,19 @@ ul {
     width: 100%;
 }
 
+.promo-content.promo-centered {
+    justify-content: center;
+}
+
 .promo-right {
     max-width: 450px;
     text-align: right;
+    color: var(--white);
+}
+
+.promo-center {
+    max-width: 550px;
+    text-align: center;
     color: var(--white);
 }
 
