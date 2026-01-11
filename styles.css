@@ -180,24 +180,39 @@ ul {
     position: absolute;
     inset: 0;
     background: linear-gradient(135deg, #f5f5f5 0%, #fff 100%);
-    z-index: -1;
+    z-index: 0;
 }
 
-.hero-bg::before {
-    content: '';
+.hero-fullbg .hero-bg {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.hero-fullbg .hero-bg::before {
+    display: none;
+}
+
+.hero-overlay {
     position: absolute;
-    right: -20%;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 70%;
-    height: 120%;
-    background: url('images/supporting image logo.jpg') center/cover;
-    border-radius: 30px 0 0 30px;
-    opacity: 0.3;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}
+
+.hero-fullbg .container {
+    position: relative;
+    z-index: 2;
 }
 
 .hero-content {
     max-width: 600px;
+}
+
+.hero-content.hero-center {
+    max-width: 800px;
+    text-align: center;
+    margin: 0 auto;
 }
 
 .hero-subtitle {
@@ -208,6 +223,11 @@ ul {
     margin-bottom: 10px;
 }
 
+.hero-fullbg .hero-subtitle {
+    color: var(--white);
+    opacity: 0.9;
+}
+
 .hero-title {
     font-size: clamp(48px, 8vw, 80px);
     font-weight: 800;
@@ -216,11 +236,65 @@ ul {
     margin-bottom: 20px;
 }
 
+.hero-fullbg .hero-title {
+    color: var(--white);
+}
+
 .hero-tagline {
     font-size: 20px;
     color: var(--gray);
     margin-bottom: 30px;
     max-width: 450px;
+}
+
+.hero-fullbg .hero-tagline {
+    color: rgba(255, 255, 255, 0.9);
+    max-width: 100%;
+}
+
+.hero-center .hero-tagline {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Clients Section */
+.clients-section {
+    padding: 50px 0;
+    background: var(--light);
+    border-bottom: 1px solid #eee;
+}
+
+.clients-label {
+    text-align: center;
+    font-size: 14px;
+    color: var(--gray);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 30px;
+}
+
+.clients-logos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 60px;
+    flex-wrap: wrap;
+}
+
+.client-logo {
+    max-width: 180px;
+    opacity: 0.8;
+    transition: var(--transition);
+}
+
+.client-logo:hover {
+    opacity: 1;
+}
+
+.client-logo img {
+    width: 100%;
+    height: auto;
+    filter: grayscale(0%);
 }
 
 /* Services Cards */
